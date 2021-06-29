@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center start" id="searchFormContainer"
+  [ngClass]="globalService.jsonFromReddit.length > 0 ? 'gotoTop' : ''">
+    <div fxLayout="column" fxLayoutAlign="center center" fxFlex="30" id="searchFormContainer2">
+      <h1>Find the latest topics about:</h1>
+      <mat-form-field class="topicformfield" appearance="outline">
+        <input matInput type="text" [(ngModel)]="valueSearch" (keyup)="searchKeyWord($event)"
+        placeholder="insert Italy,France,Euro2020,Greece for example.">
+        <button *ngIf="valueSearch" matSuffix mat-icon-button aria-label="Clear" (click)="valueSearch=''"
+        id="clearInput">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-hint>Insert at least 3 letters</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="search()" fxFlex="10" class="searchBtn">search</button>
+    </div>
+    <div class="bodyThumbsContainer">
+      <app-thumbs-gallery></app-thumbs-gallery>
+    </div>
+  </div>

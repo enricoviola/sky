@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "./variables";
+
+* {
+  letter-spacing: 0.05rem;
+}
+html, body { height: 100%; }
+body { 
+  margin: 0;
+	background: linear-gradient(-45deg, #ffe46b, #f7797d, #32c6fc, #96fdbf);
+	// background: linear-gradient(-45deg, #ffdf93, #ffa3a7, #93e2ff, #C6FFDD);
+	background-size: 400% 400%;
+	animation: gradientBGBody 35s ease infinite;
+  background-attachment: fixed;
+ }
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+@keyframes gradientBGBody {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+// NEW main Angular Material Theme ******************* //
+@import '~@angular/material/theming';
+@include mat-core();
+
+$md-blueSky: (
+    50 : #e8eaef,
+    100 : #c6cbd6,
+    200 : #a1a9bb,
+    300 : #7b86a0,
+    400 : #5e6c8b,
+    500 : #425277,
+    600 : #3c4b6f,
+    700 : #334164,
+    800 : #2b385a,
+    900 : #1d2847,
+    A100 : #8aa5ff,
+    A200 : #577fff,
+    A400 : #2458ff,
+    A700 : #0a44ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$my-app-primary: mat-palette($md-blueSky);
+$my-app-accent: mat-palette($mat-indigo, A200, A100, A400);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+@include angular-material-theme($my-app-theme);

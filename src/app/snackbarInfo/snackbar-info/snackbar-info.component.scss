@@ -1,0 +1,14 @@
+@import "../../../variables.scss";
+
+::ng-deep .mat-snack-bar-container {  
+  background-color: $blueHighPriority !important;  
+  max-width: 700px !important;
+  text-align: center !important;
+}
+
+.alert {
+  color: $white !important;
+}
+.descrizioneErrore {
+  margin-top: 10px;
+}

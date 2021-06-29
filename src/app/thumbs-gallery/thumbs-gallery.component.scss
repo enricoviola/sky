@@ -1,0 +1,198 @@
+@import "../../variables.scss";
+// @import "../../animation.scss";
+
+#thumbContainer {
+  text-align: start;
+  padding: 0 15px;
+}
+.cardThumb {
+  margin: 5px;
+  height: 100px;
+  width: 100px;
+  padding: 0 !important;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.titleThumbContainer {
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  background-color: $blackTransp;
+  opacity: 0;
+  .titleThumb {
+    color: white;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 300;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.wordSearchedContainer {
+  padding-left: 5px;
+  margin-top: 5px;
+  span {
+    font-size: 0.9rem !important;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+#thumbContainer > div {
+  display: inline-block;
+}
+.accapo {
+  display: block !important;
+}
+
+// Animations Styles
+.scale-in-hover:hover {
+	-webkit-animation: scale-in-hover 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-hover 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @-webkit-keyframes scale-in-hover {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-hover {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+
+.scale-out-center {
+	-webkit-animation: scale-out-center 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: scale-out-center 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+ @-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.opacity-out {
+	-webkit-animation: opacity-out 0.5s ease-in both;
+	        animation: opacity-out 0.5s ease-in both;
+}
+ @-webkit-keyframes opacity-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity-out {
+ 0% {
+   opacity: 1;
+ }
+ 100% {
+   opacity: 0;
+ }
+}
+
+
+.opacity-hover:hover {
+	-webkit-animation: opacity-hover 0.5s ease-out both;
+	        animation: opacity-hover 0.5s ease-out both;
+}
+@-webkit-keyframes opacity-hover {
+ 0% {
+   opacity: 0;
+ }
+ 100% {
+   opacity: 1;
+ }
+}
+@keyframes opacity-hover {
+ 0% {
+   opacity: 0;
+ }
+ 100% {
+   opacity: 1;
+ }
+}
+
+
+.swirl-in-fwd {
+	-webkit-animation: swirl-in-fwd 0.6s ease-out both;
+	        animation: swirl-in-fwd 0.6s ease-out both;
+}
+@-webkit-keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* MOBILE Style START */
+@media only screen and (max-width: $mobileBreakpoint) {
+  .cardThumb {
+    height: 70px;
+    width: 70px;
+  }
+}
+/* MOBILE Style END */

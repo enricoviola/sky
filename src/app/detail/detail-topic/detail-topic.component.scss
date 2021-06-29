@@ -1,0 +1,141 @@
+@import "../../../variables.scss";
+
+#topicContainer {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  letter-spacing: 0.05rem;
+  .infoContainer {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    max-width: 90%;
+    max-height: 80%;
+    .topicImage {
+      visibility: hidden;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  h1 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    max-width: 90%;
+    line-height: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+  }
+  p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    max-width: 90%;
+    line-height: 1.3rem;
+    text-align: center;
+  }
+  a {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: white !important;
+    text-decoration: none;
+  }
+  .material-icons {
+    margin-left: 5px;
+    font-size: 1.1rem;
+  }
+  .lateralArrow {
+    position: absolute;
+    font-size: 2.2rem;
+    cursor: pointer;
+    font-weight: 300 !important;
+  }
+  .rightArrow {
+    right: 0;
+  }
+  .leftArrow {
+    left: 0;
+  }
+  .closeBtn {
+    right: 10px;
+    top: 10px;
+    font-size: 1.8rem;
+  }
+}
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  .mat-spinner-color::ng-deep circle{
+    stroke: $middleGray !important;
+  }
+}
+
+
+
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.fade-in-later {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.7s both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.7s both;
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* MOBILE Style START */
+@media only screen and (max-width: $mobileBreakpoint) {
+  .lateralArrow {
+    font-size: 1.5rem !important;
+  }
+}
+/* MOBILE Style END */

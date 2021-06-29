@@ -1,0 +1,22 @@
+<div id="thumbContainer">
+  <div *ngFor="let item of redditJSON; let i = index" [ngClass]="item.topic ? 'accapo' : ''">
+    <div *ngIf="!item.topic">
+      <mat-card class="cardThumb scale-out-center scale-in-hover" *ngIf="item.data.thumbnail_width"
+      (mouseenter) ="hoverThumb(item) "  (mouseleave) ="leaveThumb(item)" (click)="clickOnThumb(item)"
+      [ngStyle]="{'background-image': 'url(' + item.data.thumbnail + ')'}" 
+      [class]="'card' + i"
+      [ngClass]="item.justLoadedThumbs ? 'swirl-in-fwd' : 'scale-in-hover scale-out-center'">
+        <div class="titleThumbContainer"
+        [ngClass]="item.hover ? 'opacity-hover' : 'opacity-out'">
+          <div class="titleThumb">{{item.data.title}}</div>
+        </div>
+      </mat-card>
+    </div>
+    <div *ngIf="item.topic" class="wordSearchedContainer" fxLayout="row" fxLayoutAlign="start center" >
+      {{item.topic}} 
+        <span class="material-icons" (click)="removeTopic(item)" [id]="'removeTopic'+item.topic">
+          clear
+        </span>
+    </div>
+  </div>
+</div>

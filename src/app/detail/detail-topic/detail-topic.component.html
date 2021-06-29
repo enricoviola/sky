@@ -1,0 +1,26 @@
+<div id="topicContainer" fxLayout="column" fxLayoutAlign="center center" >
+  <h1 class="fade-in">{{topic.data.title}}</h1>
+  <div class="scale-in-center infoContainer" [ngStyle]="{background: 'url(' + topicImg + ')'}"
+  fxLayout="column" fxLayoutAlign="center center">
+    <img [src]="topicImg" [alt]="topic.data.title" class="topicImage" (load)="imgLoadedF()">
+  </div>
+  <a *ngIf="topic.data.url" [href]="topic.data.url" class="fade-in-later" fxLayout="row" fxLayoutAlign="start center" >
+    <span>go to article</span>
+    <span class="material-icons">
+    chevron_right
+    </span>
+  </a>
+  <span class="material-icons rightArrow lateralArrow" (click)="gotoNext()" *ngIf="nextTopicID">
+    arrow_forward_ios
+  </span>
+  <span class="material-icons leftArrow lateralArrow" (click)="gotoPrev()" *ngIf="prevTopicID">
+    arrow_back_ios
+  </span>
+  <span class="material-icons closeBtn lateralArrow" (click)="gotoSearch()">
+    close
+    </span>
+</div>
+
+<div class="loader" fxLayout="column" fxLayoutAlign="center center" *ngIf="!imgLoadedB">
+  <mat-progress-spinner mode="indeterminate" diameter="60" strokeWidth='5' class="mat-spinner-color"></mat-progress-spinner>
+</div>

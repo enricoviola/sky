@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'skyItalia';
+
+  // https://www.foregroundweb.com/thumbnail-grids/
+
+  constructor(
+  ) { }
+
+  ngOnInit(): void {
+  }
 }
