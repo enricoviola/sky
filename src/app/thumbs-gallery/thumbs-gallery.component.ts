@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { GlobalService } from 'src/service/global.service';
+import { SnackbarInfoComponent } from '../snackbarInfo/snackbar-info/snackbar-info.component';
 
 @Component({
   selector: 'app-thumbs-gallery',
@@ -18,7 +20,8 @@ export class ThumbsGalleryComponent implements OnInit, OnDestroy {
 
   constructor(
     public globalService: GlobalService,
-    private router: Router
+    private router: Router,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -58,7 +61,14 @@ export class ThumbsGalleryComponent implements OnInit, OnDestroy {
     for (const newEl of redditJSON) {
       newEl.justLoadedThumbs = true;
     }
-    let thumbsInJson = true;
+    let thumbs = [];
+    let thumbsInJson = false;
+    for (const iterator of redditJSON) {
+      if(iterator.data.thumbnail_width) {
+        thumbs.push(iterator);
+        thumbsInJson = true;
+      }
+    }
     if(thumbsInJson) {
       this.redditJSON.push({
         'topic': this.globalService.wordSearched,
@@ -66,13 +76,13 @@ export class ThumbsGalleryComponent implements OnInit, OnDestroy {
           'id': null
         }
       });
+    } else {
+      this.globalService.snackBarInfo = `Topic not found! Try again and change the topic.`;
+      this._snackBar.openFromComponent(SnackbarInfoComponent, {
+        duration: 7000,
+      }); 
     }
-    for (const iterator of redditJSON) {
-      if(iterator.data.thumbnail_width) {
-        this.redditJSON.push(iterator);
-      }
-    }
-    thumbsInJson = false;
+    this.redditJSON.push(...thumbs);
     this.redditJSONLength = this.redditJSON.length;
     this.globalService.jsonFromReddit = this.redditJSON;
     setTimeout( ()=>{
