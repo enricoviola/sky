@@ -1,6 +1,6 @@
 # SkyItalia
 
-Per avviare il test automatica con CYPRESS, avviare dalla root del progetto nella console il seguente codice:
+Per avviare il test automatico con CYPRESS, scrivere nella console della root del progetto, il seguente codice:
 # npx ng run skyItalia:cypress-open 
 il test effettuerà velocemente le principali azioni previste per popolare la galleria delle thumb, selezionare e deselezionare i vari Topics, visualizzare la galleria con le immagini Big e le relative info.
 
